@@ -21,7 +21,7 @@ public class MainJeu {
 		AffichageText.affichageText("/graph/donjon-accueil.txt");
 		System.out.println("");
 		System.out.println("********************************");
-		System.out.println("*** Bienvenue Aventurier ***");
+		System.out.println("***** Bienvenue Aventurier *****");
 		System.out.println("********************************");
 		System.out.println("");
 		String cmdStr;
