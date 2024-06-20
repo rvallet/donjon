@@ -8,4 +8,5 @@ public class CmdVide implements InterfaceCMD {
 	public void run() {
 		System.out.println("**vide**");
 	}
+
 }

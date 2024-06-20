@@ -1,6 +1,6 @@
 package donjon.elements.objets;
 
-public abstract class Objet {
+public class Objet {
 	private String nom;
 	private String description;
 

@@ -1,6 +1,7 @@
 package donjon.elements.personnages;
 
 import java.util.Map;
+import java.util.Random;
 
 import donjon.elements.donjon.AffichageCarte;
 import donjon.elements.donjon.Combat;
@@ -10,6 +11,7 @@ import donjon.elements.objets.OneArmedBandit;
 import donjon.elements.objets.Potions;
 import donjon.elements.salles.Salles;
 import donjon.interfaces.AffichageText;
+import donjon.interfaces.RanChoice;
 import donjon.jeu.MainJeu;
 
 public class Joueur extends Personnages {
@@ -31,6 +33,11 @@ public class Joueur extends Personnages {
 		if (getVie() > 0) {
 			System.out.println("**** Attaque de " + this.nom + " ****");
 			System.out.println(this.nom + " attaque et cause " + this.getForce() + " points de dégats");
+			if ("Liche".equalsIgnoreCase(c.type.getType())) {
+				final int absorbedLife = RanChoice.ranChoice(1, 5);
+				System.out.println("La liche absorbe " + absorbedLife + " points de vie !");
+				this.setVie(this.getVie() + absorbedLife);
+			}
 			c.setVie(c.getVie() - this.getForce());
 			System.out.println(this.nom + " a encore " + getVie() + " points de vie.");
 			System.out.println();

@@ -27,7 +27,7 @@ public class Combat {
 					this.adv1.attaquer(this.joueur);
 				}
 			}
-			if (!this.joueur.isDead() & this.adv1.isDead()) {
+			if (!this.joueur.isDead() && this.adv1.isDead()) {
 				int gainPO = RanChoice.ranChoice(this.adv1.getPiecesOr(), 2 * this.adv1.getPiecesOr());
 				System.out.println("");
 				System.out.println("Le combat était rude ! Votre adversaire laisse tomber au sol une bourse d'or...");
@@ -35,8 +35,25 @@ public class Combat {
 						"Vous ramassez la bourse et dépouillez votre adversaire de " + gainPO + " pièces d'or.");
 				System.out.println("");
 				this.joueur.setPiecesOr(this.joueur.getPiecesOr() + gainPO);
+				Thread.sleep(600);
+				System.out.println("Vous avez maintenant " + this.joueur.getPiecesOr() + " pièces d'or.");
+				Thread.sleep(600);
+				switch (RanChoice.ranChoice(1, 8)){
+					case 1:
+						System.out.println("Vous avez trouvé une potion de soin sur le cadavre de votre adversaire.");
+						this.joueur.setVie(this.joueur.getVie() + 20);
+						System.out.println("Vous avez maintenant " + this.joueur.getVie() + " points de vie.");
+						break;
+					case 2:
+						System.out.println("Vous avez trouvé une potion de force sur le cadavre de votre adversaire.");
+						this.joueur.setForce(this.joueur.getForce() + 5);
+						System.out.println("Vous avez maintenant " + this.joueur.getForce() + " points de force.");
+						break;
+					default:
+						System.out.println("Vous n'avez rien trouvé d'autre sur le cadavre de votre adversaire.");
+				}
 			}
-			if (this.joueur.isDead() & !this.adv1.isDead()) {
+			if (this.joueur.isDead() && !this.adv1.isDead()) {
 				System.out.println("Votre adversaire vous a fait mondre la poussière...");
 				Thread.sleep(1500);
 				System.out.println("");

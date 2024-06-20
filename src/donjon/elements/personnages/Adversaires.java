@@ -1,10 +1,11 @@
 package donjon.elements.personnages;
 
 public class Adversaires extends Personnages {
-//	private Bestiaire type;
+
+	public final Bestiaire type;
 
 	public Adversaires(Bestiaire type) {
-//		this.type = type;
+		this.type = type;
 		setNom(type.getName());
 		setVie(type.getVie());
 		setForce(type.getForce());

@@ -1,5 +1,7 @@
 package donjon.elements.salles;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,16 +35,6 @@ public abstract class Salles {
 		setDescription("Salle n°" + numSalle);
 		setAdv(adv);
 	}
-
-//	public Salles(int numSalle, List<Objet> obj) {
-//		setNumSalle(numSalle);
-//		setDescription("Salle n°" + numSalle);
-//		setObjet(obj);
-//	if (adv instanceof Adversaires)
-//		setAdv(adv);
-//	else if (adv instanceof Objet)
-//		setObjet(adv);
-//	}
 
 	public Salles(int numSalle, List<Adversaires> adv, List<Objet> obj) {
 		setNumSalle(numSalle);

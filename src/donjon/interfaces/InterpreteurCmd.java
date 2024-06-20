@@ -15,6 +15,13 @@ import donjon.interfaces.cmd.CmdVide;
 
 public abstract class InterpreteurCmd implements InterfaceCMD {
 
+	private final static String BOURSE = "bourse";
+	private final static String BANDIT = "bandit";
+	private final static String SOIN = "soin";
+	private final static String VIE = "VIE";
+	private final static String FORCE = "force";
+	private final static String PRECISEZ = "precisez";
+
 	public static InterfaceCMD create(String cmd) {
 		InterfaceCMD cmdLauched = null;
 		String[] splitTemp = cmd.split(" ");
@@ -49,17 +56,17 @@ public abstract class InterpreteurCmd implements InterfaceCMD {
 			}
 		} else if (CmdUtiliser.CMD.equalsIgnoreCase(cmdSplit.get(0))) {
 			if (cmdSplit.size() > 1) {
-				if (cmdSplit.toString().toLowerCase().contains("bourse"))
+				if (cmdSplit.toString().toLowerCase().contains(BOURSE))
 					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1));
-				else if (cmdSplit.toString().toLowerCase().contains("bandit"))
+				else if (cmdSplit.toString().toLowerCase().contains(BANDIT))
 					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1));
-				else if (cmdSplit.toString().toLowerCase().contains("soin") || cmdSplit.toString().contains("vie"))
-					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1), "soin");
-				else if (cmdSplit.toString().toLowerCase().contains("force"))
-					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1), "force");
-				else if (!cmdSplit.toString().toLowerCase().contains("force")
-						&& !cmdSplit.toString().contains("soin")) {
-					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1), "precisez");
+				else if (cmdSplit.toString().toLowerCase().contains(SOIN) || cmdSplit.toString().contains(VIE))
+					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1), SOIN);
+				else if (cmdSplit.toString().toLowerCase().contains(FORCE))
+					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1), FORCE);
+				else if (!cmdSplit.toString().toLowerCase().contains(FORCE)
+						&& !cmdSplit.toString().contains(SOIN)) {
+					cmdLauched = new CmdUtiliser(cmdSplit.get(0), cmdSplit.get(1), PRECISEZ);
 				}
 			} else if (cmdSplit.size() < 2)
 				cmdLauched = new CmdUtiliser(cmdSplit.get(0));

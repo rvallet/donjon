@@ -12,7 +12,6 @@ public class AffichageCarte {
 	/**
 	 * Méthode qui retourne un affichage du contenu de la salle
 	 * 
-	 * @param Aucun
 	 * @author Rémy VALLET @
 	 **/
 	public static void affichageSalle() {

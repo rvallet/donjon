@@ -1,7 +1,9 @@
 package donjon.elements.personnages;
 
 public enum Bestiaire {
-	ZOMBIS("Zombi", 50, 6, 5), SQUELLETTES("Squelette", 60, 12, 20), VAMPIRES("Vampire", 80, 25, 50),
+	ZOMBIS("Zombi", 50, 6, 5),
+	SQUELLETTES("Squelette", 60, 12, 20),
+	VAMPIRES("Vampire", 80, 25, 50),
 	LEECH("Liche", 120, 35, 100);
 
 	private String type;
